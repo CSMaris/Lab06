@@ -1,4 +1,4 @@
-package it.polito.tdp.meteo.db;
+/*package it.polito.tdp.meteo.db;
 
 import java.util.List;
 
@@ -28,4 +28,4 @@ public class TestMeteoDAO {
 		
 	}
 
-}
+}*/
