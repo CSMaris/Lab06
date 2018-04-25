@@ -1,5 +1,6 @@
-/*package it.polito.tdp.meteo.db;
+package it.polito.tdp.meteo.db;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import it.polito.tdp.meteo.bean.Rilevamento;
@@ -9,8 +10,17 @@ public class TestMeteoDAO {
 	public static void main(String[] args) {
 
 		MeteoDAO dao = new MeteoDAO();
+		List<ArrayList<Rilevamento>> list=dao.get15(5);
+		for(ArrayList<Rilevamento> al:list)
+		{
+			for(Rilevamento r:al)
+			{
+				System.out.println(r);
+			}
+		}
+		
 
-		List<Rilevamento> list = dao.getAllRilevamenti();
+		/*List<Rilevamento> list = dao.getAllRilevamenti();
 
 		// STAMPA: localita, giorno, mese, anno, umidita (%)
 		for (Rilevamento r : list) {
@@ -25,7 +35,9 @@ public class TestMeteoDAO {
 //		
 //		System.out.println(dao.getAllRilevamentiLocalitaMese(5, "Torino"));
 //		System.out.println(dao.getAvgRilevamentiLocalitaMese(5, "Torino"));
+ * */
+ 
 		
 	}
 
-}*/
+}

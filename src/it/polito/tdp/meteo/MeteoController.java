@@ -23,7 +23,7 @@ public class MeteoController {
 	private URL location;
 
 	@FXML
-	private ChoiceBox<Integer> boxMese;
+	private ChoiceBox<Integer> boxMese;// potevi usare anche la classe Month, che restituisce in automatico il numero del mese associato
 
 	@FXML
 	private Button btnCalcola;
@@ -36,14 +36,21 @@ public class MeteoController {
 
 	@FXML
 	void doCalcolaSequenza(ActionEvent event) {
+		txtResult.clear();
+		model.azzeraSoluzione();
+		int mese=boxMese.getSelectionModel().getSelectedItem();
+		String result=model.trovaSequenza(mese);
+		txtResult.setText(result);
 
 	}
 
 	@FXML
 	void doCalcolaUmidita(ActionEvent event) {
 		int mese=boxMese.getSelectionModel().getSelectedItem();
+		
 		String result=model.getUmiditaMedia(mese);
 		txtResult.setText(result);
+		
 		
 
 	}
@@ -60,7 +67,10 @@ public class MeteoController {
 		this.model=model;
 		
 		this.boxMese.setItems(FXCollections.observableArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12));
+		//e qui facevi boxMese.getItems().add(Month.JANUARY) ETC...
 		
+		//oppure for(int mese=1;mese<=12;mese++)
+		//boxMese.getItems().add(Month.of(mese)
 	}
 
 }
